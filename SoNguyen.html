@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lí tuyển sinh</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <section id="exercise">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 mx-auto">
+            <div class="card">
+              <div class="card-header">
+                <div class="input">
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="mb-4">
+                        <input
+                          type="number"
+                          placeholder="Nhập số nguyên"
+                          class="form-control"
+                          id="inputIntNum"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col-4">
+                      <button
+                        type="button"
+                        class="btn btn-primary input-btn inputInt-btn"
+                      >
+                        Thêm số
+                      </button>
+                    </div>
+
+                    <div class="input-data" id="inputDataView">
+                      <p class="intNum"></p>
+                      <p class="realNum"></p>
+                      <p class="sumNums"></p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="side-bar">
+                  <div class="row">
+                    <div class="features-wrapper">
+                      <!-- 1. Tổng số dương -->
+                      <div class="row sumPos-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="sumPos">
+                            <h6>1. Tổng số dương</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="sumPosInt"
+                          >
+                            <i class="fa-solid fa-plus"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 2. Đếm số dương -->
+                      <div class="row count-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="count">
+                            <h6>2. Đếm số dương</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="countInt"
+                          >
+                            <i class="fa-solid fa-calculator"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 3. Số nhỏ nhất -->
+                      <div class="row smallest-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="smallest">
+                            <h6>3. Số nhỏ nhất</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="smallestInt"
+                          >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 4. Số dương nhỏ nhất -->
+                      <div class="row smallestPos-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="smallestPos">
+                            <h6>4. Số dương nhỏ nhất</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="smallestPosInt"
+                          >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 5. Số chẵn cuối -->
+                      <div class="row lastEven-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="lastEven">
+                            <h6>5. Số chẵn cuối cùng</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="lastEvenInt"
+                          >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 6. Sắp xếp tăng dần -->
+                      <div class="row sort-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="sort">
+                            <h6>6. Sắp xếp tăng dần</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="sortInt"
+                          >
+                            <i class="fa-solid fa-sort"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 7. Số nguyên tố đầu tiên -->
+                      <div class="row firstPrime-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="firstPrime">
+                            <h6>8. Số nguyên tố đầu tiên</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="firstPrimeInt"
+                          >
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 8. So sánh số dương và số âm -->
+                      <div class="row compare-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="count">
+                            <h6>7. So sánh lượng dương/âm</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="compareInt"
+                          >
+                            <i
+                              class="fa-solid fa-down-left-and-up-right-to-center"
+                            ></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 9. Đếm số nguyên -->
+                      <div class="row count-features mb-4">
+                        <div class="col-8 feature__title">
+                          <div class="howManyReal">
+                            <h6>9. Đếm số nguyên</h6>
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center"
+                            id="howManyRealInt"
+                          >
+                            <i class="fa-solid fa-calculator"></i>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- 10. Đổi chỗ -->
+                      <div class="row swap-features">
+                        <div class="col-8 feature__title">
+                          <div class="swap mb-3">
+                            <h6>10. Hoán đổi vị trí</h6>
+                          </div>
+                          <div class="swap-input d-flex flex-row">
+                            <input
+                              type="number"
+                              placeholder="Nhập vị trí 1"
+                              class="posi1 index_input"
+                            />
+                            <input
+                              type="number index_input"
+                              placeholder="Nhập vị trí 2"
+                              class="posi2 index_input"
+                            />
+                          </div>
+                        </div>
+                        <div class="col-4 feature__btn">
+                          <button
+                            class="btn btn-outline-primary text-center align-self-start"
+                            id="swapInt"
+                          >
+                            <i class="fa-solid fa-retweet"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card-body" style="background-color: blue">
+                <div class="output">
+                  <div
+                    class="output-export"
+                    id="exportDataView"
+                    style="color: white"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script defer src="./SoNguyen.js"></script>
+  </body>
+</html>
